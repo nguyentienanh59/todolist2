@@ -1,0 +1,19 @@
+{
+    "todos": [
+        {
+            "id": 1,
+            "title": "Làm bài tập Javascript",
+            "status": true
+        },
+        {
+            "id": 2,
+            "title": "Đá bóng",
+            "status": false
+        },
+        {
+            "id": 3,
+            "title": "Nấu cơm",
+            "status": true
+        }
+    ]
+}
