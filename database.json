@@ -1,19 +1,39 @@
 {
-    "todos": [
-        {
-            "id": 1,
-            "title": "Làm bài tập Javascript",
-            "status": true
-        },
-        {
-            "id": 2,
-            "title": "Đá bóng",
-            "status": false
-        },
-        {
-            "id": 3,
-            "title": "Nấu cơm",
-            "status": true
-        }
-    ]
+  "todos": [
+    {
+      "title": "cầm gạch ném 4",
+      "status": true,
+      "id": 100
+    },
+    {
+      "title": "cầm gạch ném 7",
+      "status": true,
+      "id": 438
+    },
+    {
+      "id": 777,
+      "title": "cầm gạch ném 6",
+      "status": false
+    },
+    {
+      "id": 399,
+      "title": "cầm gạch ném 7",
+      "status": false
+    },
+    {
+      "title": "vàng 2",
+      "status": false,
+      "id": 619
+    },
+    {
+      "id": 433,
+      "title": "cầm bút chì",
+      "status": false
+    },
+    {
+      "id": 973,
+      "title": "nấu ăn sáng",
+      "status": false
+    }
+  ]
 }
