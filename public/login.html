@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="./login/style.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#">
+          <div class="form-option">
+            <input id="username" type="text" placeholder="Username" />
+            <small></small>
+          </div>
+          <div class="form-option">
+            <input id="password" type="password" placeholder="Password" />
+            <small></small>
+          </div>
+          <div class="form-option">
+            <input
+              id="cpassword"
+              type="password"
+              placeholder="Password Confirmation"
+            />
+            <small></small>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Login</header>
+        <form action="#">
+          <div class="form-option">
+            <input id="usernameLogin" type="text" placeholder="Username" />
+            <small></small>
+          </div>
+          <div class="form-option">
+            <input id="passwordLogin" type="password" placeholder="Password" />
+            <small></small>
+          </div>
+          <a href="#">Forgot password?</a>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+      <div id="toast" class="hidden">Đăng nhập thành công</div>
+      <div id="toast-fail" class="hidden-fail">Đăng nhập thất bại</div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="./js/auth.js"></script>
+    </section>
+  </body>
+</html>
