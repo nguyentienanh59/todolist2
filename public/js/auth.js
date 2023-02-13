@@ -89,8 +89,9 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   (response) => {
     const accessToken = response.data.token;
-    localStorage.setItem("token", accessToken);
-
+    if (accessToken) {
+      localStorage.setItem("token", accessToken);
+    }
     return response;
   },
   (error) => {
@@ -109,6 +110,7 @@ const signUp = async (username, password, passwordConfirmation) => {
     if (response.status === 200 || response.status === 201) {
       localStorage.setItem("token", response.data.token);
       showToast();
+      // loginHeader.click();
       setTimeout((window.location.href = "./main.html"), 5000);
     }
     return response.data;
@@ -160,3 +162,4 @@ formLg.addEventListener("submit", function (e) {
     login(usernameLg, passwordLg);
   }
 });
+
