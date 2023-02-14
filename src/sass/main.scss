@@ -1,0 +1,145 @@
+@import "./base/reset";
+@import "./base/variables";
+
+.container {
+  background-color: $bg-color;
+  padding: 5rem 0;
+  box-shadow: 0 0.4rem 0.4rem $box-shadow;
+  border-radius: 0.4rem;
+  position: relative;
+  z-index: 2;
+  h1 {
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 2.6rem;
+    letter-spacing: 0.05em;
+    color: $text-color;
+  }
+  .todo {
+    &-input {
+      height: 3rem;
+      padding: 0 5rem;
+      input {
+        min-width: 35rem;
+        height: 100%;
+        line-height: 4rem;
+        border: none;
+        padding-left: .6rem;
+        padding-right: .6rem;
+        outline: none;
+        :focus {
+          outline: none;
+        }
+      }
+      button {
+        text-transform: uppercase;
+        display: inline-block;
+        height: 100%;
+        padding: 0 1.3rem;
+        border: .1rem solid $border-color-btn;
+        background-color: $border-color-btn;
+        color: $text-color;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+        :hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    &-option {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 5rem 0;
+      &-item {
+        border: .1rem solid $border-color-item;
+        padding: .6rem;
+        margin-left: .6rem;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        input {
+          margin-right: .4rem;
+          cursor: pointer;
+        }
+      }
+    }
+    &-container {
+      margin-top: 2rem;
+      overflow: auto;
+      height: 30rem;
+    }
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: .1rem solid $border-color-bottom-item;
+      margin-bottom: .6rem;
+      padding: 1.5rem 5rem;
+      font-size: 1.6rem;
+      background-color: $bg-color-item;
+      :hover .btn {
+        opacity: 1;
+      }
+      &-title {
+        display: flex;
+        align-items: center;
+        input {
+          margin-right: .6rem;
+        }
+      }
+    }
+  }
+  .btn {
+    opacity: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.2s ease-in;
+    img {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .todos-empty {
+    padding-left: 5rem;
+    font-style: italic;
+  }
+
+  .todo-item.active-todo .todo-item-title {
+    p {
+      position: relative;
+      font-style: italic;
+    }
+    p::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 0.15rem;
+      width: 100%;
+      background-color: $text-color;
+    }
+  }
+  .page-buttons{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    text-align: center;
+    .page-button{
+      border: none;
+      color: $bg-color;
+      font-weight: 700;
+      background-color: $text-color;
+      display: inline-block;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
