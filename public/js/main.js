@@ -6,6 +6,8 @@ const todosApi = "https://api-training-xr6q.onrender.com/api/v1";
 let idUpdate = null;
 let isUpdate = false;
 let todos = [];
+let currentPage = 1;
+let itemsPerPage = 10;
 
 const instance = axios.create({
   baseURL: "https://api-training-xr6q.onrender.com/api/v1",
@@ -101,6 +103,8 @@ async function createTodo(title) {
     const response = await createTodoAPI(title);
     todos.push(response.data.data.work);
     renderUI(todos);
+    changePage(1);
+    renderPageButtons();
   } catch (error) {
     console.log(error);
   }
@@ -121,14 +125,17 @@ btnAdd.addEventListener("click", () => {
   }
   todoInputEl.value = "";
 });
+
 async function deleteTodo(id) {
   await deleteTodoAPI(todos[id]._id);
   todos.splice(id, id + 1);
   renderUI(todos);
+  changePage(1);
+  renderPageButtons();
 }
 
 function updateTitle(id) {
-  let title = todos[id].title;  
+  let title = todos[id].title;
   btnAdd.innerText = "CẬP NHẬT";
   todoInputEl.value = title;
   todoInputEl.focus();
@@ -150,10 +157,37 @@ async function updateTodo(todoUpdate) {
   idUpdate = null;
 
   renderUI(todos);
+  changePage(1);
+  renderPageButtons();
 }
 
-window.onload = () => {
-  getTodos();
-};
 //==================pagination==============//
 
+function changePage(pageNumber) {
+  currentPage = pageNumber;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentTodos = todos.slice(startIndex, endIndex);
+  renderUI(currentTodos);
+  renderPageButtons();
+}
+
+function renderPageButtons() {
+  const pages = Math.ceil(todos.length / itemsPerPage);
+  let pageButtons = "";
+  for (let i = 1; i <= pages; i++) {
+    pageButtons += `
+      <button class="page-button" onclick="changePage(${i})">
+        ${i}
+      </button>
+    `;
+  }
+  document.querySelector(".page-buttons").innerHTML = pageButtons;
+}
+// ========================================//
+window.onload = () => {
+  getTodos().then(() => {
+    changePage(1);
+    renderPageButtons();
+  });
+};
