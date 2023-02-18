@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0faff;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+  border-radius: 1.2rem;
+  padding: 2rem 3rem 12rem;
+  background: #deaa0e;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.wrapper .form header {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.wrapper .form-option.error small {
+  color: red;
+}
+.wrapper .form.login {
+  position: absolute;
+  left: 50%;
+  bottom: -86%;
+  transform: translateX(-50%);
+  width: calc(100% + 22rem);
+  padding: 2rem 14rem;
+  border-radius: 50%;
+  height: 100%;
+  background: #fff;
+  transition: all 0.6s ease;
+}
+.wrapper .form.login header {
+  color: #333;
+  opacity: 0.6;
+}
+.wrapper .form.login input {
+  border: 0.1rem solid #aaa;
+}
+.wrapper .form.login input:focus {
+  box-shadow: 0 0.1rem 0 #ddd;
+}
+.wrapper .form.login input[type=submit] {
+  background: #deaa0e;
+  color: #fff;
+  border: none;
+}
+.wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.wrapper form a {
+  color: #333;
+  text-decoration: none;
+}
+.wrapper form a:hover {
+  text-decoration: underline;
+}
+.wrapper form input {
+  height: 6rem;
+  outline: none;
+  border: none;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  border-radius: 0.8rem;
+  background: #fff;
+  width: 100%;
+}
+.wrapper form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.wrapper form .checkbox input[type=checkbox] {
+  height: 1.6rem;
+  width: 1.6rem;
+  accent-color: #fff;
+  cursor: pointer;
+}
+.wrapper form .checkbox label {
+  cursor: pointer;
+  color: #fff;
+}
+.wrapper form input[type=submit] {
+  margin-top: 1.5rem;
+  padding: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.wrapper .hidden,
+.wrapper .hidden-fail {
+  display: none;
+}
+.wrapper #toast,
+.wrapper #toast-fail {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: green;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.wrapper.active .form.login {
+  bottom: -12%;
+  border-radius: 35%;
+  box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.wrapper.active .form.login header {
+  opacity: 1;
+}
+
+.wrapper.active .signup header {
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=styleLogin.css.map */

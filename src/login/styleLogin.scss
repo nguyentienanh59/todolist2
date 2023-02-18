@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import "./base/reset";
+@import "./base/variable";
+
+.wrapper {
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+  border-radius: 1.2rem;
+  padding: 2rem 3rem 12rem;
+  background: $bg-wrapper;
+  box-shadow: 0 .5rem 1rem $box-shadow-wrapper;
+  overflow: hidden;
+  .form {
+    header {
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 600;
+      color: $header-color;
+      cursor: pointer;
+    }
+  }
+  .form-option.error small {
+    color: $error;
+  }
+  .form.login {
+    position: absolute;
+    left: 50%;
+    bottom: -86%;
+    transform: translateX(-50%);
+    width: calc(100% + 22rem);
+    padding: 2rem 14rem;
+    border-radius: 50%;
+    height: 100%;
+    background: $background-login;
+    transition: all 0.6s ease;
+    header {
+      color: $header-login-color;
+      opacity: 0.6;
+    }
+    input {
+      border: .1rem solid $border-input-login;
+    }
+    input:focus {
+      box-shadow: 0 .1rem 0 $border-input-focus;
+    }
+    input[type="submit"] {
+      background: $bg-input-submit;
+      color: $text-submit-color;
+      border: none;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+    a {
+      color: $form-a-color;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    input {
+      height: 6rem;
+      outline: none;
+      border: none;
+      padding: 0 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: $form-input-color;
+      border-radius: .8rem;
+      background: $bg-form-input;
+      width: 100%;
+    }
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      input[type="checkbox"] {
+        height: 1.6rem;
+        width: 1.6rem;
+        accent-color: $checbox-color;
+        cursor: pointer;
+      }
+      label {
+        cursor: pointer;
+        color: $checbox-color;
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 1.5rem;
+      padding: none;
+      font-size: 1.8rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+  .hidden,
+  .hidden-fail {
+    display: none;
+  }
+  #toast,
+  #toast-fail {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $bg-toast;
+    color: $color-toast;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+}
+.wrapper.active .form.login {
+  bottom: -12%;
+  border-radius: 35%;
+  box-shadow: 0 -.5rem 1rem $box-shadow-wrapper;
+}
+.wrapper.active .form.login header {
+  opacity: 1;
+}
+.wrapper.active .signup header {
+  opacity: 0.6;
+}
+
